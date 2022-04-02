@@ -25,9 +25,8 @@ public class Main {
         }
 
         Printer.print("Array is: ");
-        for (int i = 0; i < numbers.length; i++) {
-            Printer.print(numbers[i] + " ");
-        }
+
+        Printer.print(java.util.Arrays.toString(numbers));
 
         int sum = Logic.countEvenSum(numbers);
 
