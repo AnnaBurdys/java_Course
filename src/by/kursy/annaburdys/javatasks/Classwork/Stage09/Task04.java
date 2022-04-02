@@ -1,5 +1,5 @@
 package by.kursy.annaburdys.javatasks.Classwork.Stage09;
-// nextInt(b-a+1) - a   6 12
+// nextInt(b-a+1) + a
 import java.util.Random;
 
 public class Task04 {
