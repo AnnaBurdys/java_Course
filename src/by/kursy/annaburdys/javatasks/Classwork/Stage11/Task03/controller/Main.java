@@ -11,11 +11,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        Printer.print("Input min number ");
+        Printer.print("Input min number: ");
         int minNum = scanner.nextInt();
-        Printer.print("\nInput max number: ");
+        Printer.print("Input max number: ");
         int maxNum = scanner.nextInt();
-        Printer.print("\nInput array size: ");
+        Printer.print("Input array size: ");
         int size = scanner.nextInt();
 
         int[] numbers = new int[size];
@@ -34,5 +34,4 @@ public class Main {
         String result = String.format("\nSum of all even elements = %d", sum);
         Printer.print(result);
     }
-
 }
