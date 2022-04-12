@@ -1,8 +1,8 @@
 package by.kursy.annaburdys.javatasks.Classwork.Stage12.Task03;
 
 import by.kursy.annaburdys.javatasks.Classwork.Stage12.Task01.LinearSearch;
-import by.kursy.annaburdys.javatasks.Classwork.Stage12.Task01.util.ArrayInitializer;
-import by.kursy.annaburdys.javatasks.Classwork.Stage12.Task01.util.Converter;
+import by.kursy.annaburdys.javatasks.Classwork.Stage12.util.ArrayInitializer;
+import by.kursy.annaburdys.javatasks.Classwork.Stage12.util.Converter;
 import by.kursy.annaburdys.javatasks.view.Printer;
 
 import java.util.Scanner;

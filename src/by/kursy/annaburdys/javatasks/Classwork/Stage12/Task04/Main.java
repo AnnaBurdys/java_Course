@@ -1,4 +1,4 @@
-package by.kursy.annaburdys.javatasks.Classwork.Stage12.Task02;
+package by.kursy.annaburdys.javatasks.Classwork.Stage12.Task04;
 
 import by.kursy.annaburdys.javatasks.Classwork.Stage12.Task01.LinearSearch;
 import by.kursy.annaburdys.javatasks.Classwork.Stage12.util.ArrayInitializer;
@@ -11,20 +11,22 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Printer.print("Input size of array: ");
-        int size = scanner.nextInt();;
+        int size = scanner.nextInt();
 
         int[] array = new int[size];
 
         ArrayInitializer.rndInit(array, -10, 10);
-
+      //  Arrays.sort(array);
         Printer.print("Input value for searching: ");
         int value = scanner.nextInt();
+        System.out.println("Second index " + LinearSearch.findSecondIndex(array, value));
+       // boolean result = BinarySearch.checkValue(array, value);
 
-        int firstIndex = LinearSearch.findFirstIndex(array, value);
-        int lastIndex = LinearSearch.findLastIndex(array, value);
+      //  int index = LinearSearch.findLastIndex(array, value);
+      //  System.out.println("Index - " + index);
 
         Printer.print("\nArray: " + Converter.convertFromArrayToString(array));
-        String msg = String.format("First index of value %d = %d, last index = %d", value, firstIndex, lastIndex);
-        Printer.print("\n" + msg);
+       // String msg = result ? "Yes" : "No";
+       // Printer.print("\nResult: " + msg);
     }
 }

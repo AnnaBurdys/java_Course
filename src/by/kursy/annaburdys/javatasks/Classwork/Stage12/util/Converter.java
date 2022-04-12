@@ -1,4 +1,4 @@
-package by.kursy.annaburdys.javatasks.Classwork.Stage12.Task01.util;
+package by.kursy.annaburdys.javatasks.Classwork.Stage12.util;
 
 public class Converter {
     public static String convertFromArrayToString(int[] array) {
