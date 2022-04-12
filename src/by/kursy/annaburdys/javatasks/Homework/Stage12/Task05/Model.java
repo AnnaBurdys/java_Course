@@ -12,9 +12,6 @@ public class Model {
     }
 
     public static float countPercent(int[] array, int markAmount) {
-        int a = array.length;
-        float percent;
-        percent = (float) (markAmount * 100 / a);
-        return percent;
+        return (float) (markAmount * 100 / array.length);
     }
 }

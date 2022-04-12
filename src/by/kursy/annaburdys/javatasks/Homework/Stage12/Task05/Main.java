@@ -28,6 +28,7 @@ public class Main {
         float percent3 = Model.countPercent(array, count3);
         float percent4 = Model.countPercent(array, count4);
         float percent5 = Model.countPercent(array, count5);
+
         String resultString = String.format("""
                 Amount of fives: %d (%.1f %%)\s
                 Amount of fours: %d (%.1f %%)
