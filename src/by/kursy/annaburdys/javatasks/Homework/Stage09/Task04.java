@@ -17,9 +17,9 @@ public class Task04 {
         boolean flag = false;
         int temp = number;
         int rem, r = 0;
-        for (; number!=0; number/=10) {
+        for (; number != 0; number /= 10) {
             rem = number % 10;
-            r = r*10+rem;
+            r = r * 10 + rem;
         }
         if (temp == r) {
             flag = true;
