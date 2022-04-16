@@ -1,5 +1,6 @@
 package by.kursy.annaburdys.javatasks.Classwork.Stage13.Task03;
 
+import by.kursy.annaburdys.javatasks.Classwork.Stage13.ArraySorter;
 import by.kursy.annaburdys.javatasks.view.Printer;
 
 import java.util.Arrays;
@@ -10,9 +11,9 @@ public class Main {
         Printer.print("Before sorting: ");
         Printer.print(Arrays.toString(array));
 
+        ArraySorter.selectedSortAsc(array);
 
-
-        Printer.print("After sorting ");
+        Printer.print("\nAfter sorting ");
         Printer.print(Arrays.toString(array));
     }
 }
