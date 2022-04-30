@@ -294,7 +294,16 @@ public class Model {
         return true;
     }
 
-
-
+    public static boolean areOfOneOdd(int[] array) {
+        boolean flag = true;
+         int remain = array[0] % 2;
+        for (int element : array) {
+            if (element % 2 != remain) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
 
 }
