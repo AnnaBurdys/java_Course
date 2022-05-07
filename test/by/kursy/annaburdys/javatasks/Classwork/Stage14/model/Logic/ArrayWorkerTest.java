@@ -1,5 +1,5 @@
 package by.kursy.annaburdys.javatasks.Classwork.Stage14.model.Logic;
-import org.junit.Assert;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
