@@ -14,8 +14,6 @@ public class Bouquet {
         } else {
             flowers = new Flower[0];
         }
-        ;
-
     }
 
     public Bouquet() {

@@ -2,7 +2,7 @@ package by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.ent
 
 public class Flower {
    private String name;
-   private  String color;
+   private String color;
    private double price;
    private double weight;
    private int length;

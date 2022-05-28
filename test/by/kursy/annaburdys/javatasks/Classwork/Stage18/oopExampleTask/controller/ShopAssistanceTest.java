@@ -2,11 +2,10 @@ package by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.controlle
 
 import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.entity.Bouquet;
 import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.entity.Flower;
-
-import static org.junit.Assert.*;
-
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 
 public class ShopAssistanceTest {
@@ -138,6 +137,5 @@ public class ShopAssistanceTest {
         }
         //  assertArrayEquals(expected,actual);
     }
-
 
 }
