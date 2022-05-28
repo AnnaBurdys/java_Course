@@ -20,11 +20,20 @@ public class Student {
         alive = true;
     }
 
-    public Student(String name, int age, double mark, boolean alive) {
+    public Student(String name, int age, boolean alive) {
         this.name = name;
         this.age = age;
-        note = new MarksNote(mark);
         this.alive = alive;
+    }
+
+    public Student(String name, int age, double mark, boolean alive) {
+        this(name, age, alive);
+        note = new MarksNote(mark);
+    }
+
+    public Student(String name, int age, MarksNote note, boolean alive) {
+        this(name, age, alive);
+        this.note = note;
     }
 
     public double getMark() {
@@ -54,8 +63,8 @@ public class Student {
             this.age = age;
     }
 
-    public double getNote() {
-        return note.getMark();
+    public MarksNote getNote() {
+        return note;
     }
 
     public void setNote(MarksNote note) {
@@ -69,6 +78,8 @@ public class Student {
     public void setAlive(boolean alive) {
         this.alive = alive;
     }
+
+
 
     @Override
     public String toString() {
