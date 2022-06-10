@@ -2,16 +2,19 @@ package by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.controlle
 
 import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.entity.Bouquet;
 import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.entity.Flower;
-import org.junit.Test;
+import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.logic.ShopAssistance;
+import org.junit.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 
 public class ShopAssistanceTest {
-    private Bouquet bouquet;
+    private static Bouquet bouquet;
 
-    {
+
+    @BeforeClass
+    public static void init() {
         Flower[] flowers = {
                 new Flower("Rose", "red", 3, 100, 100),
                 new Flower("Rose", "red", 3, 100, 80),
@@ -21,6 +24,20 @@ public class ShopAssistanceTest {
         bouquet = new Bouquet(flowers);
     }
 
+    @AfterClass
+    public static void destroy() {
+       bouquet = null;
+    }
+
+    @Before // перед каждым тестовым методом
+    public void connect(){
+        System.out.println("Connect to database..");
+    }
+
+    @After // после каждого тестового метода
+    public void disconnect() {
+        System.out.println("Disconnect from database..");
+    }
 
     @Test
     public void testCalculateTotalPricePositive() {

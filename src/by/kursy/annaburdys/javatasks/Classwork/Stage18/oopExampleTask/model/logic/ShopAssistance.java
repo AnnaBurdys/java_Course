@@ -1,4 +1,4 @@
-package by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.controller;
+package by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.logic;
 
 import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.entity.Bouquet;
 import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.entity.Flower;
