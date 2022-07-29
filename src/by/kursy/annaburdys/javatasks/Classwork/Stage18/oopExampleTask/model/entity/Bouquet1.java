@@ -2,10 +2,10 @@ package by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.ent
 
 import java.util.ArrayList;
 
-public class Bouquet {
+public class Bouquet1 {
     private ArrayList<Flower> flowers;
 
-    public Bouquet(Flower[] flowers) {
+    public Bouquet1(Flower[] flowers) {
         if (flowers != null) {
             this.flowers = new ArrayList<>();
             for (Flower flower : flowers) {
@@ -16,7 +16,7 @@ public class Bouquet {
         }
     }
 
-    public Bouquet() {
+    public Bouquet1() {
         flowers = new ArrayList<>();
     }
 
@@ -63,9 +63,14 @@ public class Bouquet {
         return flowers.size();
     }
 
-    /*public String toString() {
-
-    }*/
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder("List of flowers:");
+        for (Flower flower: flowers) {
+            builder.append("\n").append(flower);
+        }
+        return builder + "";
+    }
 
     public Flower get(int index) {
         if (index >= 0 && index < flowers.size()) {

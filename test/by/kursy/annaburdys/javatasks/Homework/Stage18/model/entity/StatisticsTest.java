@@ -10,19 +10,19 @@ public class StatisticsTest {
     @Test
     public void testCalculateTotalMoneyPositive() {
         Player[] players = {
-                new Player("Player", 21, 10, 100, true),
-                new Player("Player", 18, 3, 100, false),
-                new Player("Player", 3, 6, 100, false),
-                new Player("Player", 9, 1, 100, true),
+                new Warrior("Player", 21, 100, 10, 100, true, "sword", 10),
+                new Warrior("Player", 21, 100, 10, 100, true, "sword", 10),
+                new Warrior("Player", 21, 100, 10, 100, true, "sword", 10),
+                new Warrior("Player", 21, 100, 10, 100, true, "sword", 10),
         };
 
-        Team team = new Team(players);
+        Team1 team1 = new Team1(players);
 
-        double expected = 20;
+        double expected = 40;
 
-        double actual = Statistics.calculateTotalMoney(team);
+        double actual = Statistics.calculateTotalMoney(team1);
 
-        assertEquals(expected,actual, 0.01);
+        assertEquals(expected, actual, 0.01);
     }
 
     @Test
@@ -31,39 +31,37 @@ public class StatisticsTest {
 
         double actual = Statistics.calculateTotalMoney(null);
 
-        assertEquals(expected,actual, 0.0);
+        assertEquals(expected, actual, 0.0);
     }
 
     @Test
     public void testCalculateTotalMoneyWithEmptyObject() {
         Player[] players = {};
-        Team team = new Team(players);
+        Team1 team1 = new Team1(players);
 
         double expected = 0;
 
-        double actual = Statistics.calculateTotalMoney(team);
+        double actual = Statistics.calculateTotalMoney(team1);
 
-        assertEquals(expected,actual, 0.0);
+        assertEquals(expected, actual, 0.0);
     }
-
-
 
     @Test
     public void testCalculateTotalDiamondsPositive() {
         Player[] players = {
-                new Player("Player", 21, 10, 100, true),
-                new Player("Player", 18, 3, 100, false),
-                new Player("Player", 3, 6, 100, false),
-                new Player("Player", 9, 1, 100, true),
+                new Warrior("Player", 21, 100, 10, 100, true, "sword", 10),
+                new Warrior("Player", 21, 100, 10, 100, true, "sword", 10),
+                new Warrior("Player", 21, 100, 10, 100, true, "sword", 10),
+                new Warrior("Player", 21, 100, 10, 100, true, "sword", 10),
         };
 
-        Team team = new Team(players);
+        Team1 team1 = new Team1(players);
 
         int expected = 400;
 
-        int actual = Statistics.calculateTotalDiamonds(team);
+        int actual = Statistics.calculateTotalDiamonds(team1);
 
-        assertEquals(expected,actual, 0.0);
+        assertEquals(expected, actual, 0.0);
     }
 
     @Test
@@ -72,38 +70,38 @@ public class StatisticsTest {
 
         int actual = Statistics.calculateTotalDiamonds(null);
 
-        assertEquals(expected,actual, 0.0);
+        assertEquals(expected, actual, 0.0);
     }
 
     @Test
     public void testCalculateTotalDiamondsWithEmptyObject() {
         Player[] players = {};
-        Team team = new Team(players);
+        Team1 team1 = new Team1(players);
 
         int expected = 0;
 
-        int actual = Statistics.calculateTotalDiamonds(team);
+        int actual = Statistics.calculateTotalDiamonds(team1);
 
-        assertEquals(expected,actual, 0.0);
+        assertEquals(expected, actual, 0.0);
     }
 
     @Test
     public void testFindMaxDiamondsPlayersFirst() {
         Player[] players = {
-                new Player("Player", 21, 10, 100, true),
-                new Player("Player", 18, 3, 500, false),
-                new Player("Player", 3, 6, 100, false),
-                new Player("Player", 9, 1, 100, true),
+                new Warrior("Player", 21, 100, 10, 100, true, "sword", 10),
+                new Warrior("Player", 18, 90, 3, 500, false, "sword", 10),
+                new Warrior("Player", 21, 100, 10, 100, true, "sword", 10),
+                new Warrior("Player", 21, 100, 10, 100, true, "sword", 10),
         };
 
-        Team team = new Team(players);
+        Team1 team1 = new Team1(players);
 
-        Player[] expected = {new Player("Player", 18, 3, 500, false)};
-        Player[] actual = Statistics.findMaxDiamondsPlayers(team);
+        Player[] expected = {new Warrior("Player", 18, 90, 3, 500, false, "sword", 10)};
+        Player[] actual = Statistics.findMaxDiamondsPlayers(team1);
 
         for (int i = 0; i < expected.length; i++) {
             if (expected[i].getLevel() != actual[i].getLevel() || expected[i].getMoney() != actual[i].getMoney() ||
-                    expected[i].getDiamonds() != actual[i].getDiamonds()  ||
+                    expected[i].getDiamonds() != actual[i].getDiamonds() ||
                     !expected[i].getName().equals(actual[i].getName())) {
                 fail();
             }
@@ -111,27 +109,4 @@ public class StatisticsTest {
         //  assertArrayEquals(expected,actual);
     }
 
-    @Test
-    public void testFindMaxLengthFlowersSecond() {
-        Player[] players = {
-                new Player("Player", 21, 10, 100, true),
-                new Player("Player", 18, 3, 500, false),
-                new Player("Player", 3, 6, 500, false),
-                new Player("Player", 9, 1, 100, true),
-        };
-
-        Team team = new Team(players);
-
-        Player[] expected = {new Player("Player", 18, 3, 500, false)};
-        Player[] actual = Statistics.findMaxDiamondsPlayers(team);
-
-        for (int i = 0; i < expected.length; i++) {
-            if (expected[i].getLevel() != actual[i].getLevel() || expected[i].getMoney() != actual[i].getMoney() ||
-                    expected[i].getDiamonds() != actual[i].getDiamonds()  ||
-                    !expected[i].getName().equals(actual[i].getName())) {
-                fail();
-            }
-        }
-        //  assertArrayEquals(expected,actual);
-    }
 }

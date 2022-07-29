@@ -1,6 +1,6 @@
 package by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.controller;
 
-import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.entity.Bouquet;
+import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.entity.Bouquet3;
 import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.entity.Flower;
 import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.logic.ShopAssistance;
 import org.junit.*;
@@ -10,7 +10,7 @@ import static org.junit.Assert.fail;
 
 
 public class ShopAssistanceTest {
-    private static Bouquet bouquet;
+    private static Bouquet3 bouquet3;
 
 
     @BeforeClass
@@ -21,12 +21,12 @@ public class ShopAssistanceTest {
                 new Flower("Rose", "red", 3, 100, 100),
                 new Flower("Rose", "red", 3, 100, 50)
         };
-        bouquet = new Bouquet(flowers);
+        bouquet3 = new Bouquet3(flowers);
     }
 
     @AfterClass
     public static void destroy() {
-       bouquet = null;
+       bouquet3 = null;
     }
 
     @Before // перед каждым тестовым методом
@@ -44,7 +44,7 @@ public class ShopAssistanceTest {
 
         double expected = (ShopAssistance.LABOR_PERCENT + 1) * 12;
 
-        double actual = ShopAssistance.calculateTotalPrice(bouquet);
+        double actual = ShopAssistance.calculateTotalPrice(bouquet3);
 
         assertEquals(expected, actual, 0.01);
     }
@@ -61,11 +61,11 @@ public class ShopAssistanceTest {
     @Test
     public void testCalculateTotalPriceWithEmptyObject() {
         Flower[] flowers = {};
-        Bouquet bouquet = new Bouquet(flowers);
+        Bouquet3 bouquet3 = new Bouquet3(flowers);
 
         double expected = 0;
 
-        double actual = ShopAssistance.calculateTotalPrice(bouquet);
+        double actual = ShopAssistance.calculateTotalPrice(bouquet3);
 
         assertEquals(expected, actual, 0.0);
     }
@@ -76,7 +76,7 @@ public class ShopAssistanceTest {
 
         double expected = 400;
 
-        double actual = ShopAssistance.calculateTotalWeight(bouquet);
+        double actual = ShopAssistance.calculateTotalWeight(bouquet3);
 
         assertEquals(expected, actual, 0.1);
     }
@@ -93,11 +93,11 @@ public class ShopAssistanceTest {
     @Test
     public void testCalculateTotalWeightWithEmptyObject() {
         Flower[] flowers = {};
-        Bouquet bouquet = new Bouquet(flowers);
+        Bouquet3 bouquet3 = new Bouquet3(flowers);
 
         double expected = 0;
 
-        double actual = ShopAssistance.calculateTotalWeight(bouquet);
+        double actual = ShopAssistance.calculateTotalWeight(bouquet3);
 
         assertEquals(expected, actual, 0.0);
     }
@@ -106,7 +106,7 @@ public class ShopAssistanceTest {
     public void testFindMaxLengthFlowersFirst() {
 
         Flower[] expected = {new Flower("Rose", "red", 3, 100, 100)};
-        Flower[] actual = ShopAssistance.findMaxLengthFlowers(bouquet);
+        Flower[] actual = ShopAssistance.findMaxLengthFlowers(bouquet3);
 
         for (int i = 0; i < expected.length; i++) {
             if (expected[i].getLength() != actual[i].getLength() || expected[i].getPrice() != actual[i].getPrice() ||
@@ -122,7 +122,7 @@ public class ShopAssistanceTest {
     public void testFindMaxLengthFlowersSecond() {
 
         Flower[] expected = {new Flower("Rose", "red", 3, 100, 100)};
-        Flower[] actual = ShopAssistance.findMaxLengthFlowers(bouquet);
+        Flower[] actual = ShopAssistance.findMaxLengthFlowers(bouquet3);
 
         for (int i = 0; i < expected.length; i++) {
             if (expected[i].getLength() != actual[i].getLength() || expected[i].getPrice() != actual[i].getPrice() ||

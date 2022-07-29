@@ -1,5 +1,7 @@
 package by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.entity;
 
+import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.exception.FlowerPriceWrongException;
+
 public class Flower {
    private String name;
    private String color;
@@ -52,9 +54,11 @@ public class Flower {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(double price) throws FlowerPriceWrongException {
         if (price > 0) {
             this.price = price;
+        } else {
+            throw new FlowerPriceWrongException();
         }
     }
 
@@ -81,7 +85,7 @@ public class Flower {
     @Override
     public String toString() {
         return name + ": " +
-                ", color = '" + color +
+                " color = " + color +
                 ", price = " + price +
                 ", weight = " + weight +
                 ", length = " + length;
