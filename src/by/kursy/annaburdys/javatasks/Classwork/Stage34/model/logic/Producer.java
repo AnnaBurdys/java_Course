@@ -2,6 +2,8 @@ package by.kursy.annaburdys.javatasks.Classwork.Stage34.model.logic;
 
 import by.kursy.annaburdys.javatasks.Classwork.Stage34.model.entity.Market;
 
+import java.util.concurrent.TimeUnit;
+
 public class Producer implements Runnable {
     private boolean running;
     private Market market;
@@ -19,6 +21,12 @@ public class Producer implements Runnable {
         while(running) {
             product++;
             market.send(product);
+
+            try{
+                TimeUnit.MILLISECONDS.sleep(100);
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
         }
     }
 
