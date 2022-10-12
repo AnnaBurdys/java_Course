@@ -1,40 +1,45 @@
 package by.kursy.annaburdys.javatasks.Classwork.Stage33.model;
 
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Printer {
 
-    private Lock lock;
+    private Semaphore semaphore;
 
     public Printer() {
-        lock = new ReentrantLock();
+        semaphore = new Semaphore(1, true);
     }
 
-    public void print(String text) throws InterruptedException {
-        lock.lock();
 
-        System.out.print("[");
-
+    public void print(String text) {
         try {
+            semaphore.acquire();
 
-            TimeUnit.MILLISECONDS.sleep(100);
+            System.out.print("[");
 
             try {
+
+                TimeUnit.MILLISECONDS.sleep(100);
+
                 for (int i = 0; i < text.length(); i++) {
                     System.out.print(text.charAt(i));
                     TimeUnit.MILLISECONDS.sleep(100);
                 }
 
                 TimeUnit.MILLISECONDS.sleep(100);
-            } finally {
-                lock.unlock();
-            }
 
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            } catch (InterruptedException exception) {
+                System.out.println(exception);
+            }
+            System.out.println("]");
+        } catch (InterruptedException exception) {
+            System.out.println(exception);
+        } finally {
+            semaphore.release();
         }
-        System.out.println("]");
     }
+
 }
