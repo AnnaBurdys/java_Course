@@ -2,7 +2,11 @@ package by.kursy.annaburdys.javatasks.Classwork.Stage29And30.model;
 
 import by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.exception.FlowerPriceWrongException;
 
-public class Flower {
+import java.io.Serializable;
+
+public class Flower implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String name;
     private String color;
     private double price;

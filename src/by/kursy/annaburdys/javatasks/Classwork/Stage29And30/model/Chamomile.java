@@ -2,7 +2,9 @@ package by.kursy.annaburdys.javatasks.Classwork.Stage29And30.model;
 
 import by.kursy.annaburdys.javatasks.Classwork.Stage23.entity.Flower;
 
-public class Chamomile extends by.kursy.annaburdys.javatasks.Classwork.Stage23.entity.Flower {
+import java.io.Serializable;
+
+public class Chamomile extends by.kursy.annaburdys.javatasks.Classwork.Stage23.entity.Flower implements Serializable {
     private int petalCount;
 
     public Chamomile() {

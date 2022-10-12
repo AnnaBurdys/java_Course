@@ -1,6 +1,8 @@
 package by.kursy.annaburdys.javatasks.Classwork.Stage23.entity;
 
-public class Flower extends by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.entity.Flower {
+import java.io.Serializable;
+
+public class Flower extends by.kursy.annaburdys.javatasks.Classwork.Stage18.oopExampleTask.model.entity.Flower implements Serializable {
    private String name;
    private String color;
    private double price;

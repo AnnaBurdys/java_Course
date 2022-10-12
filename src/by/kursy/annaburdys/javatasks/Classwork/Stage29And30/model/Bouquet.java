@@ -4,11 +4,13 @@ import by.kursy.annaburdys.javatasks.Classwork.Stage23.container.Container;
 import by.kursy.annaburdys.javatasks.Classwork.Stage23.container.DynamicArray;
 import by.kursy.annaburdys.javatasks.Classwork.Stage23.entity.Flower;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class Bouquet implements Iterable<Flower> {
+public class Bouquet implements Iterable<Flower>, Serializable {
+    private static final long serialVersionUID = 1L;
     private Collection<Flower> flowers;
 
     public Bouquet() {
